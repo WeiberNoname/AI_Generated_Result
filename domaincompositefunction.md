@@ -1,57 +1,56 @@
-# Domain of a Composite Function
+# 微積分：函數定義域 (Domain of a Function)
 
-This problem requires identifying the set of all possible input values ($x$) for which the function is defined and yields a real number.
+This problem is a classic example of finding the domain of a composite function, a frequent topic in Taiwan's University Transfer Exams (轉學考).
 
 ---
 
-## 📝 The Question
-Find the domain of the following function:
+## 📝 Problem Statement
+Find the domain of the function:
 $$f(x) = \frac{\sqrt{4 - x^2}}{\ln(x - 1)}$$
 
 ---
 
-## 🛠 Analysis of Constraints
-To find the domain, we must satisfy three specific mathematical conditions simultaneously. If any one of these is violated, the function becomes undefined.
+## 🛠 Analysis & Solution
 
-### 1. The Even Root Constraint (Numerator)
-The expression inside the square root, $4 - x^2$, must be non-negative because the square root of a negative number is not a real number.
+To find the domain $D_f$, we must ensure the function is defined within the set of real numbers $\mathbb{R}$. This requires satisfying the following three constraints simultaneously:
+
+### 1. Radicand Constraint (根號限制)
+For an even-indexed root to be defined in $\mathbb{R}$, the radicand must be non-negative:
 $$4 - x^2 \geq 0$$
-$$x^2 \leq 4$$
-$$-2 \leq x \leq 2$$
-**Interval:** $[-2, 2]$
+$$(2-x)(2+x) \geq 0$$
+$$-2 \leq x \leq 2 \quad \cdots \text{(I)}$$
 
-### 2. The Logarithm Constraint (Denominator)
-The argument of the natural logarithm, $(x - 1)$, must be strictly positive.
+### 2. Logarithmic Constraint (對數限制)
+The argument of the natural logarithm must be strictly positive:
 $$x - 1 > 0$$
-$$x > 1$$
-**Interval:** $(1, \infty)$
+$$x > 1 \quad \cdots \text{(II)}$$
 
-### 3. The Rational Constraint (Non-Zero Denominator)
-The entire denominator cannot be equal to zero.
+### 3. Non-zero Denominator Constraint (分母不為零限制)
+The denominator of a fraction cannot be zero:
 $$\ln(x - 1) \neq 0$$
-Since $\ln(1) = 0$, the argument $(x - 1)$ cannot be $1$.
+Since $\ln(1) = 0$, we have:
 $$x - 1 \neq 1$$
-$$x \neq 2$$
+$$x \neq 2 \quad \cdots \text{(III)}$$
 
 ---
 
-## 🔢 Final Intersection
-To find the final domain, we look for the overlap of all three conditions:
+## 🔢 Final Intersection (交集)
 
-, (1, inf), and x != 2]
+We determine the domain by finding the intersection of sets (I), (II), and (III):
+$$D_f = \{x \in \mathbb{R} \mid -2 \leq x \leq 2\} \cap \{x \in \mathbb{R} \mid x > 1\} \cap \{x \in \mathbb{R} \mid x \neq 2\}$$
 
-1.  **Start with the root:** We are limited to the window between $-2$ and $2$.
-2.  **Apply the log:** We must be greater than $1$. This narrows our window to $(1, 2]$.
-3.  **Apply the non-zero rule:** We must exclude exactly $2$. This changes the closed bracket at $2$ to an open parenthesis.
+1. From (I) and (II): $1 < x \leq 2$.
+2. Applying (III) ($x \neq 2$): The upper bound becomes strictly less than 2.
+
+
 
 **Final Answer:**
-The domain of the function is:
+The domain in interval notation is:
 $$(1, 2)$$
 
 ---
 
-## 💡 Key Takeaway
-When dealing with complex fractions, always check the **"Big Three"** of domains:
-* **Roots:** Can't have a negative under an even root.
-* **Logs:** The argument must be strictly positive.
-* **Denominators:** Cannot divide by zero.
+## 💡 Exam Tips for Taiwan Transfer Exams
+* **Notation:** In Taiwan exams, you can provide the answer in set notation $\{x \mid 1 < x < 2\}$ or interval notation $(1, 2)$. Both are generally accepted unless specified.
+* **Partial Credit:** Always list the three constraints (Radical, Log, Denominator) separately. Even if you make a calculation error at the end, identifying these will usually earn you partial points.
+* **Boundary Check:** Pay close attention to whether the endpoints (1 and 2) are included (closed bracket) or excluded (open parenthesis). This is the most common place students lose marks.
